@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "cab27db0-d283-4278-83fa-654e67f73375",
+		"name": "Produtor Rural",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14354403"
+	},
+	"item": [
+		{
+			"name": "Criar um novo produtor rural",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Fulano de tal\",\n    \"document\": \"03870979020\",\n    \"farms\": [\n        {\n            \"name\": \"Fazenda Bonanza\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"total_area\": 100,\n            \"arable_area\": 50,\n            \"vegetation_area\": 50,\n            \"crops\": [\n                {\n                    \"crop_type\": \"COTTON\",\n                    \"area\": 20\n                },\n                {\n                    \"crop_type\": \"SUGARCANE\",\n                    \"area\": 30\n                }\n            ]\n        },\n        {\n            \"name\": \"Fazenda Riacho Doce\",\n            \"city\": \"Belo Horizonte\",\n            \"state\": \"MG\",\n            \"total_area\": 100,\n            \"arable_area\": 50,\n            \"vegetation_area\": 50,\n            \"crops\": [\n                {\n                    \"crop_type\": \"COTTON\",\n                    \"area\": 20\n                },\n                {\n                    \"crop_type\": \"SUGARCANE\",\n                    \"area\": 30\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/farmer",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"farmer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar um produtor rural",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"João da Silva 2\",\n    \"document\": \"81739524004\",\n    \"farms\": [\n        {\n            \"id\": \"af00cba5-e7ab-4582-90f2-628bb1f61c1c\",\n            \"name\": \"Fazenda Bonanza\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"RJ\",\n            \"total_area\": 100,\n            \"arable_area\": 50,\n            \"vegetation_area\": 50,\n            \"crops\": [\n                {\n                    \"id\": \"716e1b8b-b6a8-40d7-8415-83d6ddb60ed3\",\n                    \"crop_type\": \"CORN\",\n                    \"area\": 20\n                },\n                {\n                    \"id\": \"8903980a-183d-4d14-8d04-8734c2c31736\",\n                    \"crop_type\": \"COFFEE\",\n                    \"area\": 30\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/farmer/{{farmer_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"farmer",
+						"{{farmer_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover um produtor rural",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/farmer/{{farmer_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"farmer",
+						"{{farmer_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar o dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/farmer/{{farmer_id}}/dashboard",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"farmer",
+						"{{farmer_id}}",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
